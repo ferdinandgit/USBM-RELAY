@@ -18,7 +18,7 @@ target_include_directories(serial PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 file(GLOB_RECURSE SOURCES
             ${CMAKE_CURRENT_SOURCE_DIR}/example/relaycontrol.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/usbrelay.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/usbmrelay.cpp
             )
 
 

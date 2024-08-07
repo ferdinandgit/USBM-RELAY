@@ -13,12 +13,12 @@ using std::string;
 
 
 
-class Usbrelay
+class Usbmrelay
 {
 
 public:
     
-    Usbrelay(const string& port,int relaynumber = 8);
+    Usbmrelay(const string& port,int relaynumber = 8);
     int openCom();  
     int closeCom();
     int  initBoard();
@@ -31,15 +31,17 @@ public:
     std::string getPort();
     int getRelayNumber();
     int setPort(const std::string &port);
+    int setDelay(int delay);
     
 private:
 
-    int send(char  data, unsigned long milliseconds);
+    int send(std::vector<int> data,unsigned long milliseconds);
     int recieve(int nbyte);
     void bufferrxAdd(char elt);
     void buffertxAdd(char elt);
     int baudrate;
     int relaynumber;
+    int delay;
     std::string device;
     std::vector<int> boardstate = std::vector<int>(8); 
     std::vector<char> buffertx =  std::vector<char>(8);
