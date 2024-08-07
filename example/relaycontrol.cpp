@@ -32,7 +32,7 @@ int main(){
     //Connection and init to the board
     std::cout << "=====Connection======" << std::endl;
     
-    Usbmrelay* usbmrelay = new Usbmrelay("COM7",8); //Create a new board, please specify: port, default relaynumber
+    Usbmrelay* usbmrelay = new Usbmrelay("COM7",8); //Create a new board, please specify: port, default relaynumber 
     
     if(usbmrelay->openCom()!=1){//Open commmunication with the board
         std::cout << "Connection Failed" << std::endl;
@@ -59,9 +59,9 @@ int main(){
     std::cout << usbmrelay->getSpeed() << std::endl;
     
 
-    //Create Command array for  relays board 
-    int command1 [] = {1,1,1,1,0,0,0,0}; //Create command activate K1 and deactivate all other relays 
-    int command2 = 0xf0;     //Create command activate K2 and deactivate all ather relays
+    //Create Command array for 8 relays board 
+    int command1 [] = {1,1,1,1,0,0,0,0}; //Create command activate K1,K2,K3,K4 and deactivate all other relays 
+    int command2 = 0xf0;     //Create command activate K5,K6,K7,K8 and deactivate all other relays
     
     
     for(int k=0;k<=10;k++){
